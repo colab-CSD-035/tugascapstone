@@ -4,13 +4,13 @@
    "description":"Kalkulator BMI",
    "icons":[
       {
-         "src":"https:\/\/cermat.id\/assets\/icon-192.png",
+         "src":"https:\/\/kapsul.id\/assets\/icon-192.png",
          "sizes":"192x192",
          "type":"image\/png",
          "purpose":"any maskable"
       },
       {
-         "src":"https:\/\/cermat.id\/assets\/icon-512.png",
+         "src":"https:\/\/kapsul.id\/assets\/icon-512.png",
          "sizes":"512x512",
          "type":"image\/png",
          "purpose":"any maskable"
