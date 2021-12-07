@@ -1,10 +1,17 @@
-const heightVal = document.getElementById("heightVal");
+var heightVal = document.getElementById("heightVal");
 heightVal.innerHTML = height.value;
-height.oninput = function() {heightVal.innerHTML = this.value;}
+
+height.oninput = function() {
+  heightVal.innerHTML = this.value;
+}
+
 var weightVal = document.getElementById("weightVal");
 weightVal.innerHTML = weight.value;
-weight.oninput = function() {weightVal.innerHTML = this.value;}
-    const riwayat = [];
+
+weight.oninput = function() {
+  weightVal.innerHTML = this.value;
+}
+    var riwayat = [];
     $(function () {
       if (localStorage.riwayat)
       {
@@ -13,7 +20,7 @@ weight.oninput = function() {weightVal.innerHTML = this.value;}
       }
     });
 
-    function saveCust() {
+    const saveCust = () => {
       if ( window.localStorage)
       {
         localStorage.riwayat = JSON.stringify(riwayat);
@@ -21,18 +28,18 @@ weight.oninput = function() {weightVal.innerHTML = this.value;}
     }
 
     $('#hitung').click(function(){
-       today = new Date();
-      const date = today.getFullYear()+'\/'+(today.getMonth()+1)+'\/'+today.getDate();
-      const height   = $("#height").val();
-      const weight   = $("#weight").val();
-      const quadH = (height / 100) * 2;
-      const calc = weight / quadH;
-      const bmi = calc.toFixed(1);
+      var today = new Date();
+      var date = today.getFullYear()+'\/'+(today.getMonth()+1)+'\/'+today.getDate();
+      var height   = $("#height").val();
+      var weight   = $("#weight").val();
+      var quadH = (height / 100) * 2;
+      var calc = weight / quadH;
+      var bmi = calc.toFixed(1);
       
         if (calc < 18.5) {
-            const status =  "KURANG";
-            const saran = "Tingkatkan asupan nutrisi dan porsi makan Anda secara terukur.";
-            const color = "#c9c71c";
+            var status =  "KURANG";
+            var saran = "Tingkatkan asupan nutrisi dan porsi makan Anda secara terukur.";
+            var color = "#c9c71c";
         }
         if (calc > 18.5 && calc < 22.9) {
             var status =  "NORMAL";
@@ -67,7 +74,7 @@ weight.oninput = function() {weightVal.innerHTML = this.value;}
       showCust();
     });
 
-    function showCust() {
+    const showCust = () => {
       if (riwayat.length == 0) {
         $("#classcust").css("visibility", "hidden");
         return;
@@ -83,7 +90,7 @@ weight.oninput = function() {weightVal.innerHTML = this.value;}
       }
     }
     
-const clear = document.getElementById('clearLocalStorage');
+var clear = document.getElementById('clearLocalStorage');
 clear.onclick = function() {
     localStorage.clear();
     document.getElementById('classcust').style.display = 'none';
@@ -92,18 +99,25 @@ clear.onclick = function() {
 var showData = document.getElementById('showData');
 var hideData = document.getElementById('hideData');
 
-function openNav() {document.getElementById("myNav").style.display = "block";document.getElementById('inputForm').style.display = "none";showData.style.display = "none";hideData.style.display = "flex";
-    document.getElementById('respMenu').style.display = 'block';
+const openNav = () => {
+  document.getElementById("myNav").style.display = "block";
+  document.getElementById('inputForm').style.display = "none";
+  showData.style.display = "none";
+  hideData.style.display = "flex";
+  document.getElementById('respMenu').style.display = 'block';
 }
 
-function closeNav() {document.getElementById("myNav").style.display = "none";document.getElementById('inputForm').style.display = "block";hideData.style.display = "none";showData.style.display = "flex";}
-
-function showRecord() {
-    document.getElementById("myNav").style.display = "block";
-    document.getElementById('inputForm').style.display = "none";
+const closeNav = () => {document.getElementById("myNav").style.display = "none";
+document.getElementById('inputForm').style.display = "block";hideData.style.display = "none";
+showData.style.display = "flex";
 }
 
-function tutupNav() {
+const showRecord = () => {
+  document.getElementById("myNav").style.display = "block";
+  document.getElementById('inputForm').style.display = "none";
+}
+
+const tutupNav = () => {
     document.getElementById("myNav").style.display = "none";
     document.getElementById('inputForm').style.display = "block";
 }
