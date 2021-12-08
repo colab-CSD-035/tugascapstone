@@ -1,9 +1,13 @@
 var heightVal = document.getElementById("heightVal");
 heightVal.innerHTML = height.value;
-height.oninput = function() {heightVal.innerHTML = this.value;}
+height.oninput = function() {
+    heightVal.innerHTML = this.value;
+}
 var weightVal = document.getElementById("weightVal");
 weightVal.innerHTML = weight.value;
-weight.oninput = function() {weightVal.innerHTML = this.value;}
+weight.oninput = function() {
+    weightVal.innerHTML = this.value;
+}
     var riwayat = [];
     $(function () {
       if (localStorage.riwayat)
