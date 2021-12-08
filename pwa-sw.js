@@ -123,7 +123,7 @@ self.addEventListener('fetch', function(e) {
 });
 
 // Check if current url is in the neverCacheUrls list
-function checkNeverCacheList(url) {
+const checkNeverCacheList = (url) => {
 	if ( this.match(url) ) {
 		return false;
 	}
