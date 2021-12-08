@@ -4,8 +4,8 @@
    "description":"Kalkulator BMI",
    "icons":[
       {
-         "src":"https:\/\/kapsul.id\/assets\/icon-192.png",
-         "sizes":"192x192",
+         "src":"https:\/\/kapsul.id\/assets\/icon-128.png",
+         "sizes":"128x128",
          "type":"image\/png",
          "purpose":"any maskable"
       },
