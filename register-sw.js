@@ -1,8 +1,13 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
 	navigator.serviceWorker.register(superpwa_sw.url)
-	.then(function(registration) { console.log('PWA service worker ready'); registration.update(); })
-	.catch(function(error) { console.log('Registration failed with ' + error); });
+	.then(function(registration) { 
+		console.log('PWA service worker ready');
+		registration.update(); 
+	})
+	.catch(function(error) { 
+		console.log('Registration failed with ' + error); 
+	});
 
 
 	var deferredPrompt;
@@ -17,8 +22,12 @@ if ('serviceWorker' in navigator) {
 			if(a2hsBanner.length){
 				deferredPrompt.preventDefault();
 				//Disable on desktop
-				if(superpwa_sw.enableOnDesktop!=1 && !window.mobileCheck()){return ;}
-				if(typeof super_check_bar_closed_or_not == 'function' && !super_check_bar_closed_or_not()){return ;}
+				if(superpwa_sw.enableOnDesktop!=1 && !window.mobileCheck()){
+					return;
+				}
+				if(typeof super_check_bar_closed_or_not == 'function' && !super_check_bar_closed_or_not()){
+					return;
+				}
 				for (var i = 0; i < a2hsBanner.length; i++) {
 					var showbanner = a2hsBanner[i].getAttribute("data-show");
 					a2hsBanner[i].style.display="flex";
@@ -44,8 +53,10 @@ if ('serviceWorker' in navigator) {
       }
     }
 
-    function addToHome(){
-		if(!deferredPrompt){return ;}
+    const addToHome = () => {
+		if(!deferredPrompt){
+			return;
+		}
 		deferredPrompt.prompt(); 
 		deferredPrompt.userChoice.then(function(choiceResult) {
 			if (choiceResult.outcome === "accepted") {
