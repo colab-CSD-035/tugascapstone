@@ -3,38 +3,35 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kalkulator BMI</title>
+<meta name='theme-color' content='#333333' />
 <link rel="manifest" href="/manifest.json" />
 <link rel="prefetch" href="/manifest.json" />
-<link rel="shortcut icon" href="assets/icon-192.png" />
+<link rel="shortcut icon" href="assets/icon-128.png" />
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 <div class='container'>
 <nav>
-<a id='siteTitle' href='/secc'>Kalkulator BMI</span>
+<a id='siteTitle' href='/'>Kalkulator BMI</a>
     <span class='mob'>
     <a id='showData' class='mob' onclick="openNav()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="box-sizing: content-box;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></a>
     <a id='hideData' class='mob' onclick="closeNav()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="box-sizing: content-box;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></a>
     </span>
     <span class='web menus' style='float: right;padding: 8px 0px;'>
     <div id='menus'>
-      <a href='#'>Blog</a>
-      <a href='#' class='record' onclick='showRecord()'>Record</a>
-      <a href='#'>Contact</a>
-      <a href='#'>About</a>
-      <a href='#'>Menu #1</a>
-      <a href='#'>Menu #2</a>
-      <a href='#'>Menu #3</a>
+      <a class='record' href='javascript:showRecord()' style='cursor: pointer;'>Riwayat</a>
+      <a href='/about'>Tentang</a>
+      <a href='/contact'>Kontak</a>
     </div>
     </span>
 </nav>
 <div id='inputForm'>
 <div id='formHolder'>
 <div class='col'>
-  <p>HEIGHT:</p><p id='val'><span id="heightVal" class='value'></span> CM</p><input type="range" min="70" max="200" value="70" class="slider" id="height">
+  <p>TINGGI BADAN:</p><p id='val'><span id="heightVal" class='value'></span> CM</p><input type="range" min="70" max="200" value="70" class="slider" id="height">
 </div>
 <div class='col'>
-  <p>WEIGHT:</p><p id='val'><span id="weightVal" class='value'></span> KG</p><input type="range" min="40" max="100" value="53" class="slider" id="weight">
+  <p>BERAT BADAN:</p><p id='val'><span id="weightVal" class='value'></span> KG</p><input type="range" min="40" max="100" value="53" class="slider" id="weight">
 </div>
 </div>
 <button id='hitung'>HITUNG BMI</button>
@@ -43,17 +40,17 @@
   <div class='mob menus' id='mobMenu'></div>
   RIWAYAT
   <div style='float: right;display: inline;'>
-    <a id='clearLocalStorage'>CLEAR</a>
+    <a id='clearLocalStorage'>HAPUS RIWAYAT</a>
     <a onclick='tutupNav()' id='tutupNav' class='web'>TUTUP</a>
   </div>
-  <div id="classcust">
-    <div id="custBody">
+  <div id="classhist">
+    <div id="histBody">
         
     </div>
   </div>
 </div>
 <footer>
-    &copy; 2021. BMI Calculator.
+    &copy; 2021. Kalkulator BMI.
 </footer>
 </div>
 <div id='result' style='display: none;position: absolute;top:0;left:0; height:100%; width: 100%;z-index:101; background-color: rgba(0,0,0, .5);align-items: center;justify-content: center;padding-top: 125px;box-sizing: border-box;'>
@@ -74,8 +71,8 @@ $("#menus").clone().appendTo("#mobMenu");
 </script>
 <script src='assets/script.js'></script>
 <script type='text/javascript' id='superpwa-register-sw-js-extra'>
-/* <![CDATA[ */var superpwa_sw = {"url":"pwa-sw.js","disable_addtohome":"0","enableOnDesktop":""};/* ]]> */
+/* <![CDATA[ */ var superpwa_sw = {"url":"\/pwa-sw.js","disable_addtohome":"0","enableOnDesktop":""}; /* ]]> */
 </script>
-<script type='text/javascript' src='register-sw.js' id='superpwa-register-sw-js'></script>
+<script type='text/javascript' src='/register-sw.js' id='superpwa-register-sw-js'></script>
 </body>
 </html>
