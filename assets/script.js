@@ -1,26 +1,19 @@
 var heightVal = document.getElementById("heightVal");
 heightVal.innerHTML = height.value;
-
-height.oninput = function() {
-  heightVal.innerHTML = this.value;
-}
-
+height.oninput = function() {heightVal.innerHTML = this.value;}
 var weightVal = document.getElementById("weightVal");
 weightVal.innerHTML = weight.value;
-
-weight.oninput = function() {
-  weightVal.innerHTML = this.value;
-}
+weight.oninput = function() {weightVal.innerHTML = this.value;}
     var riwayat = [];
     $(function () {
       if (localStorage.riwayat)
       {
         riwayat = JSON.parse(localStorage.riwayat);
-        showCust();
+        showhist();
       }
     });
 
-    const saveCust = () => {
+    const savehist = () => {
       if ( window.localStorage)
       {
         localStorage.riwayat = JSON.stringify(riwayat);
@@ -70,30 +63,30 @@ weight.oninput = function() {
 
       var item = {date:date, height:height, weight:weight, bmi:bmi, status:status, color:color}; 
       riwayat.push(item);
-      saveCust();
-      showCust();
+      savehist();
+      showhist();
     });
 
-    const showCust = () => {
+    const showhist = () => {
       if (riwayat.length == 0) {
-        $("#classcust").css("visibility", "hidden");
+        $("#classhist").css("visibility", "hidden");
         return;
       }
 
-      $("#classcust").css("visibility", "visible");
-      $("#custBody").empty();
+      $("#classhist").css("visibility", "visible");
+      $("#histBody").empty();
 
       for (var i in riwayat) {
         var item = riwayat[i];
         var row = '<div class=\'col\'><p class=\'showDate\'>'+ item.date +'</p><span id=\'topIndo\'><span id=\'tb\'>'+ item.height +' cm</span><span id=\'bb\'>'+ item.weight +' kg</span></span><span id=\'bottomInfo\'><span id=\'bmi\'>BMI '+ item.bmi +'</span><span id=\'state\' style=\'color:'+ item.color +'\'>'+ item.status +'</span></span></div>';
-        $("#custBody").append(row);
+        $("#histBody").append(row);
       }
     }
     
 var clear = document.getElementById('clearLocalStorage');
 clear.onclick = function() {
     localStorage.clear();
-    document.getElementById('classcust').style.display = 'none';
+    document.getElementById('classhist').style.display = 'none';
 }
 
 var showData = document.getElementById('showData');
@@ -107,9 +100,11 @@ const openNav = () => {
   document.getElementById('respMenu').style.display = 'block';
 }
 
-const closeNav = () => {document.getElementById("myNav").style.display = "none";
-document.getElementById('inputForm').style.display = "block";hideData.style.display = "none";
-showData.style.display = "flex";
+const closeNav = () => {
+  document.getElementById("myNav").style.display = "none";
+  document.getElementById('inputForm').style.display = "block";
+  hideData.style.display = "none";
+  showData.style.display = "flex";
 }
 
 const showRecord = () => {
@@ -117,7 +112,7 @@ const showRecord = () => {
   document.getElementById('inputForm').style.display = "none";
 }
 
-const tutupNav = () => {
-    document.getElementById("myNav").style.display = "none";
-    document.getElementById('inputForm').style.display = "block";
+function tutupNav() {
+  document.getElementById("myNav").style.display = "none";
+  document.getElementById('inputForm').style.display = "block";
 }
