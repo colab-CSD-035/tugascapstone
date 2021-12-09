@@ -1,11 +1,11 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-	navigator.serviceWorker.register(superpwa_sw.url)
+	navigator.serviceWorker.register(pwa_sw.url)
 	.then(function(registration) { 
 		console.log('PWA service worker ready');
 		registration.update(); 
 	})
-	.catch(function(error) { 
+	.catch(function(error) {
 		console.log('Registration failed with ' + error); 
 	});
 
@@ -14,16 +14,16 @@ if ('serviceWorker' in navigator) {
 	window.addEventListener('beforeinstallprompt', function(e){
 		deferredPrompt = e;
 		if(deferredPrompt != null || deferredPrompt != undefined){
-			if(superpwa_sw.disable_addtohome==1){
+			if(pwa_sw.disable_addtohome==1){
 				deferredPrompt.preventDefault();
 			}
 
-			var a2hsBanner = document.getElementsByClassName("superpwa-sticky-banner");
+			var a2hsBanner = document.getElementsByClassName("pwa-sticky-banner");
 			if(a2hsBanner.length){
 				deferredPrompt.preventDefault();
 				//Disable on desktop
-				if(superpwa_sw.enableOnDesktop!=1 && !window.mobileCheck()){
-					return;
+				if(pwa_sw.enableOnDesktop!=1 && !window.mobileCheck()){
+					return ;
 				}
 				if(typeof super_check_bar_closed_or_not == 'function' && !super_check_bar_closed_or_not()){
 					return;
@@ -37,7 +37,7 @@ if ('serviceWorker' in navigator) {
 	})
 
 	window.addEventListener('appinstalled', function(evt){
-		var a2hsBanner = document.getElementsByClassName("superpwa-sticky-banner");
+		var a2hsBanner = document.getElementsByClassName("pwa-sticky-banner");
 		if(a2hsBanner.length){
 			for (var i = 0; i < a2hsBanner.length; i++) {
 				var showbanner = a2hsBanner[i].getAttribute("data-show");
@@ -46,21 +46,21 @@ if ('serviceWorker' in navigator) {
 		}
 	});
 	
-	var a2hsviaClass = document.getElementsByClassName("superpwa-add-via-class");
+	var a2hsviaClass = document.getElementsByClassName("pwa-add-via-class");
     if(a2hsviaClass !== null){
         for (var i = 0; i < a2hsviaClass.length; i++) {
           a2hsviaClass[i].addEventListener("click", addToHome); 
       }
     }
 
-    const addToHome = () => {
+    function addToHome(){
 		if(!deferredPrompt){
 			return;
 		}
 		deferredPrompt.prompt(); 
 		deferredPrompt.userChoice.then(function(choiceResult) {
 			if (choiceResult.outcome === "accepted") {
-				var a2hsBanner = document.getElementsByClassName("superpwa-sticky-banner");
+				var a2hsBanner = document.getElementsByClassName("pwa-sticky-banner");
 				if(a2hsBanner){
 					for (var i = 0; i < a2hsBanner.length; i++) {
 						var showbanner = a2hsBanner[i].getAttribute("data-show");
