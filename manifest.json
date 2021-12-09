@@ -1,7 +1,7 @@
 {
-   "name":"Kalkulator BMI",
-   "short_name":"BMI",
-   "description":"Kalkulator BMI",
+   "name":"CalcMe",
+   "short_name":"CalcMe",
+   "description":"CalcMe",
    "icons":[
       {
          "src":"https:\/\/kapsul.id\/assets\/icon-128.png",
