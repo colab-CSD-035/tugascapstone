@@ -1,4 +1,4 @@
-const cacheName = 'kapsulID';
+const cacheName = 'CalcMe';
 const startPage = 'https://kapsul.id/';
 const offlinePage = 'https://kapsul.id/';
 const filesToCache = [startPage, offlinePage];
@@ -123,7 +123,7 @@ self.addEventListener('fetch', function(e) {
 });
 
 // Check if current url is in the neverCacheUrls list
-const checkNeverCacheList = (url) => {
+function checkNeverCacheList(url) {
 	if ( this.match(url) ) {
 		return false;
 	}
