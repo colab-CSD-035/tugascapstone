@@ -7,7 +7,7 @@ height.oninput = function() {
 
 var weightVal = document.getElementById("weightVal");
     weightVal.innerHTML = weight.value;
-weight.oninput = function() {
+    weight.oninput = function() {
     weightVal.innerHTML = this.value;
 }
 
@@ -90,25 +90,33 @@ function showhist() {
     
 var clear = document.getElementById('clearLocalStorage');
 clear.onclick = function() {
-    localStorage.clear();
-    document.getElementById('classhist').style.display = 'none';
+  localStorage.clear();
+  document.getElementById('classhist').style.display = 'none';
 }
 
 var showData = document.getElementById('showData');
 var hideData = document.getElementById('hideData');
 
-function openNav() {document.getElementById("myNav").style.display = "block";document.getElementById('inputForm').style.display = "none";showData.style.display = "none";hideData.style.display = "flex";
-    document.getElementById('respMenu').style.display = 'block';
+function openNav() {document.getElementById("myNav").style.display = "block";
+  document.getElementById('inputForm').style.display = "none";
+  showData.style.display = "none";
+  hideData.style.display = "flex";
+  document.getElementById('respMenu').style.display = 'block';
 }
 
-function closeNav() {document.getElementById("myNav").style.display = "none";document.getElementById('inputForm').style.display = "block";hideData.style.display = "none";showData.style.display = "flex";}
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+  document.getElementById('inputForm').style.display = "block";
+  hideData.style.display = "none";
+  showData.style.display = "flex";
+}
 
 function showRecord() {
-    document.getElementById("myNav").style.display = "block";
-    document.getElementById('inputForm').style.display = "none";
+  document.getElementById("myNav").style.display = "block";
+  document.getElementById('inputForm').style.display = "none";
 }
 
 function tutupNav() {
-    document.getElementById("myNav").style.display = "none";
-    document.getElementById('inputForm').style.display = "block";
+  document.getElementById("myNav").style.display = "none";
+  document.getElementById('inputForm').style.display = "block";
 }
