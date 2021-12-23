@@ -12,3 +12,5 @@ Menggunakan Deployment Hosting dan Website dapat di akses https://kapsul.id/
 
 > Framework
   - Bootstrap
+> Library
+  - JQuery https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
