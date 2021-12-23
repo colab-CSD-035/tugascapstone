@@ -1,14 +1,18 @@
+$(document).ready(function(){
+  $("#menus").clone().appendTo("#mobMenu");
+});
+
 var heightVal = document.getElementById("heightVal");
-    heightVal.innerHTML = height.value;
+  heightVal.innerHTML = height.value;
 
 height.oninput = function() {
-    heightVal.innerHTML = this.value;
+  heightVal.innerHTML = this.value;
 }
 
 var weightVal = document.getElementById("weightVal");
-    weightVal.innerHTML = weight.value;
-    weight.oninput = function() {
-    weightVal.innerHTML = this.value;
+  weightVal.innerHTML = weight.value;
+  weight.oninput = function() {
+  weightVal.innerHTML = this.value;
 }
 
 var riwayat = [];
@@ -63,7 +67,7 @@ $('#hitung').click(function(){
     document.getElementById('advice').innerHTML = saran;
     
     document.getElementById('tutup').onclick = function() {
-        result.style.display = 'none';
+      result.style.display = 'none';
     }
     
     var item = {date:date, height:height, weight:weight, bmi:bmi, status:status, color:color}; 
@@ -83,7 +87,7 @@ function showhist() {
 
   for (var i in riwayat) {
     var item = riwayat[i],
-        row = '<div class=\'col\'><p class=\'showDate\'>'+ item.date +'</p><span id=\'topIndo\'><span id=\'tb\'>'+ item.height +' cm</span><span id=\'bb\'>'+ item.weight +' kg</span></span><span id=\'bottomInfo\'><span id=\'bmi\'>BMI '+ item.bmi +'</span><span id=\'state\' style=\'color:'+ item.color +'\'>'+ item.status +'</span></span></div>';
+      row = '<div class=\'col\'><p class=\'showDate\'>'+ item.date +'</p><span id=\'topIndo\'><span id=\'tb\'>'+ item.height +' cm</span><span id=\'bb\'>'+ item.weight +' kg</span></span><span id=\'bottomInfo\'><span id=\'bmi\'>BMI '+ item.bmi +'</span><span id=\'state\' style=\'color:'+ item.color +'\'>'+ item.status +'</span></span></div>';
     $("#histBody").append(row);
   }
 }
@@ -97,7 +101,8 @@ clear.onclick = function() {
 var showData = document.getElementById('showData');
 var hideData = document.getElementById('hideData');
 
-function openNav() {document.getElementById("myNav").style.display = "block";
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
   document.getElementById('inputForm').style.display = "none";
   showData.style.display = "none";
   hideData.style.display = "flex";
@@ -114,9 +119,4 @@ function closeNav() {
 function showRecord() {
   document.getElementById("myNav").style.display = "block";
   document.getElementById('inputForm').style.display = "none";
-}
-
-function tutupNav() {
-  document.getElementById("myNav").style.display = "none";
-  document.getElementById('inputForm').style.display = "block";
 }
