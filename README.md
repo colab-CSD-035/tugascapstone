@@ -9,3 +9,6 @@ Aplikasi ini memiliki fitur :
   - Menu Kontak berisi Data diri dari developer aplikasi
 
 Menggunakan Deployment Hosting dan Website dapat di akses https://kapsul.id/
+
+> Framework
+  - Bootstrap
