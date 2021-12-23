@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tentang - CalcMe</title>
+<meta name='theme-color' content='#333333' />
+<link rel="manifest" href="/manifest.json" />
+<link rel="prefetch" href="/manifest.json" />
+<link rel="shortcut icon" href="../assets/icon-128.png" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+<div class='container'>
+    
+<nav>
+<a id='siteTitle' href='/'>CalcMe</a>
+    <span class='mob'>
+        <a id='showData' class='mob' href='/' style='background: #444;'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="box-sizing: content-box;"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        </a>
+    </span>
+    <span class='web menus' style='float: right;padding: 8px 0px;'>
+        <div id='menus'>
+          <a class='record' href='/riwayat'>Riwayat</a>
+          <a href='/tentang'>Tentang</a>
+          <a href='/kontak'>Kontak</a>
+          <a href='/blog'>Blog</a>
+        </div>
+    </span>
+</nav>
+
+</div>
+
+<div class='container mt-2 mb-2'>
+    <div id="myNav"><div class='mob menus' id='mobMenu'></div></div>
+    <div class='row'>
+        <h1>Tentang</h1>
+        <p>BMI atau Body Mass Index adalah ukuran yang digunakan untuk mengukur proporsionalitas antara tinggi dan berat badan seseorang. BMI merupakan cara yang mudah untuk menilai apakah seseorang mengalami obesitas atau tidak</p>
+        <p>Ada pun rumus menghitung BMI adalah sebagai berikut:</p>
+        
+        <style>
+            table.bmi {display: block;margin-bottom: 15px;}
+            table tr.top {font-weight: bold;border-bottom: 3px solid #f6f6f6;}
+            table td {border: 1px solid #f6f6f6;padding: 3px 17px 3px 10px;}
+        </style>
+        <table class='bmi'>
+            <tr class='top'>
+            <td>BMI</td>
+            <td class='top'>Weight Status</td>
+            </tr>
+            
+            <tr>
+                <td>Dibawah 18.5</td>
+                <td>KURANG</td>
+            </tr>
+            
+            <tr>
+                <td>18.5 - 24.9</td>
+                <td>NORMAL</td>
+            </tr>
+            
+            <tr>
+                <td>25.0 - 29.9</td>
+                <td>BERLEBIH</td>
+            </tr>
+            
+            <tr>
+                <td>30.0 - dst</td>
+                <td>OBESITAS</td>
+            </tr>
+        </table>
+        
+        <p><b>BMI = Berat Badan(kg) / Tinggi Badan2(m2)</b></p>
+        <p>Hasil BMI yang normal adalah dengan rentang nilai 18.5 – 24.9. Apabila hasil BMI berada di bawah 18.5 berarti asupan kalori harian anda lebih rendah dari kebutuhan anda . Oleh karena itu, disarankan untuk mengkonsumsi lebih banyak kalori untuk memenuhi kebutuhan tubuh</p>
+        <p>Jika hasil BMI anda berada di atas 24.9 berarti asupan kalori anda lebih tinggi dari kebutuhan anda, sehingga anda akan disarankan untuk mengurangi asupan kalori atau dengan berolahraga secara rutin</p>
+        <p>Mari terapkan hidup sehat dengan gaya hidup lebih baik. Gaya hidup sangat mempengaruhi kondisi kesehatan Anda dan keluarga. Apakah Anda sudah menerapkannya di keseharian anda?</p>
+        <i>Narasumber: dr. Daniel Prayogo (Manager Medis Bethsaida Hospitals)</i>
+    </div>
+</div>
+
+<footer>
+    &copy; 2021. CalcMe.
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>$(document).ready(function(){$("#menus").clone().appendTo("#mobMenu");});</script>
+<script type='text/javascript' id='pwa-register-sw-js-extra'>
+/* <![CDATA[ */ var pwa_sw = {"url":"\/pwa-sw.js","disable_addtohome":"0","enableOnDesktop":""}; /* ]]> */
+</script>
+<script type='text/javascript' src='/register-sw.js' id='pwa-register-sw-js'></script>
+</body>
+</html>
